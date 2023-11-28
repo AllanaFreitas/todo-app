@@ -7,7 +7,7 @@ app.engine('handlebars', exphbs.enine())
 app.set('view enine', 'handlebars')
 
 app.get('/', (requisicao, resposta) => {
-    resposta.send("ola, mundo!")
+    resposta.render('home')
 }) 
 
 app.listen(3000, () => {
