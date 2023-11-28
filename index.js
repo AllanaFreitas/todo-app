@@ -1,10 +1,10 @@
 const express = require("express")
-const exphbs = requirw("express-handlebars")
+const exphbs = require("express-handlebars")
 
 const app = express()
 
-app.engine('handlebars', exphbs.enine())
-app.set('view enine', 'handlebars')
+app.engine('handlebars', exphbs.engine())
+app.set('view engine', 'handlebars')
 
 app.get('/', (requisicao, resposta) => {
     resposta.render('home')
