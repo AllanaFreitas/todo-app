@@ -1,3 +1,11 @@
+const express = require("express")
+const exphbs = requirw("express-handlebars")
+
+const app = express()
+
+app.engine('handlebars', exphbs.enine())
+app.set('view enine', 'handlebars')
+
 app.get('/', (requisicao, resposta) => {
     resposta.send("ola, mundo!")
 }) 
