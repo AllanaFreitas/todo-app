@@ -1,9 +1,10 @@
 <main>
     <section class="tarefas">
+        {{#etah tarefas}}
         <div class="tarefa">
             <form action="">
                 <div>
-                    <input type="radio" id="tarefa-1">
+                    <input type="checkbox" id="tarefa-{{this.id}}">
                 <label for="tarefa-1">Completar curso de Javascripit</label>
                 </div>
                 <button>
@@ -11,28 +12,7 @@
                 </button>
             </form>
         </div>
-        <div class="tarefa">
-            <form action="">
-                <div>
-                    <input type="radio" id="tarefa-1">
-                <label for="tarefa-1">Completar curso de Javascripit</label>
-                </div>
-                <button>
-                    <img src="/imagens/x-icon.png" alt="icone de x para excluir tarefas">
-                </button>
-            </form>
-        </div>
-        <div class="tarefa">
-            <form action="">
-                <div>
-                    <input type="radio" id="tarefa-1">
-                <label for="tarefa-1">Completar curso de Javascripit</label>
-                </div>
-                <button>
-                    <img src="/imagens/x-icon.png" alt="icone de x para excluir tarefas">
-                </button>
-            </form>
-        </div>
+        {{#each}}
         <div class="informacoes">
             <p>5 tarefas ativas</p>
 
