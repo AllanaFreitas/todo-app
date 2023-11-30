@@ -16,6 +16,24 @@ app.use(express.use.urlencoded({
 app.use(express.json())
 
 //rotas
+app.post('/completar', (requisicao, resposta) => {
+    const id = requisicao.body.id
+
+    const sql = `
+        UPTADE tarefas
+        SET completa = '1'
+        WHERE id = $(id)
+    `
+
+    conexao.query(sql, (erro) => {
+        if(erro) {
+            return console.log(erro)
+        }
+
+        resposta.redirect('/')
+    })
+})
+ 
 app.post('/criar', (requisicao, resposta) => {
     const descricao = requisicao.body.descricao
     const completa = 0

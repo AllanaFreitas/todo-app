@@ -3,16 +3,23 @@
         {{#etah tarefas}}
         <div class="tarefa">
             <form action="">
-                <div>
-                    <input type="checkbox" id="tarefa-{{this.id}}">
-                <label for="tarefa-1">Completar curso de Javascripit</label>
+                {{#if this.completa}}
+                <div class="completa">
+                    <input type="checkbox" id="tarefa-{{this.id}}" checked>
+                    <label for="tarefa-1">Completar curso de Javascripit</label>
                 </div>
+                {{else}}
+                <div class="completa">
+                    <input type="checkbox" id="tarefa-{{this.id}}" onchange="completarTarefa(){{this.id}}">
+                    <label for="tarefa-1">Completar curso de Javascripit</label>
+                </div>
+                {{/if}}
                 <button>
                     <img src="/imagens/x-icon.png" alt="icone de x para excluir tarefas">
                 </button>
             </form>
         </div>
-        {{#each}}
+        {{/each}}
         <div class="informacoes">
             <p>5 tarefas ativas</p>
 
